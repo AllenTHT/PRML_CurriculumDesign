@@ -33,7 +33,7 @@ conda install h5py=3.11.0
 conda install pytorch torchvision torchaudio cudatoolkit=11.8 -c pytorch
 ```
 
-失败deMan，但毕竟是3.8的失败的继续，所以坚持这么跑完也没有报错了，但没必要，转到正确的道路上吧。
+失败deMan，但毕竟是3.8的失败的继续，所以坚持这么跑完也没有报错了，但没必要，转到正确的道路上吧。->"这下总可以了吧"
 
 ```cpp
 // 这部分的代码不用运行了
