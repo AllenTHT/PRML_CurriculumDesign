@@ -5,9 +5,9 @@
 创建激活环境
 
 ```cpp
-conda create -n py38env python=3.8
-conda activate env_name
-conda activate py38env
+conda create -n py38env python=3.9 //py3.9无法下载open3d？是无法使用conda下载！所以中途还搞了个3.8版本的唉……
+// conda activate env_name
+conda activate myenv
 ```
 
 退出环境
@@ -31,19 +31,63 @@ conda安装包
 conda install h5py=3.11.0
 
 conda install pytorch torchvision torchaudio cudatoolkit=11.8 -c pytorch
+```
 
-conda install -c open3d-admin open3d
+失败deMan，但毕竟是3.8的失败的继续，所以坚持这么跑完也没有报错了，但没必要，转到正确的道路上吧。
+
+```cpp
+// 这部分的代码不用运行了
+~~conda install -c open3d-admin open3d~~
 // 然后一运行open3d这里就开始一直报：缺少各种包
 // 包括但不限于：
-conda install scikit-learn
+~~conda install scikit-learn
 conda install -c conda-forge addict
 conda install pandas
 conda install -c conda-forge plyfile
-conda install -c conda-forge tqdm
+conda install -c conda-forge tqdm~~
 ```
-threedmatch.py修改调用module版
+
+## OMG好像Python3.9又可以了？发生了什么？
+
+[Open3D – A  Modern Library for 3D Data Processing](https://www.open3d.org/)
+
+本来是3.9无法下载open3d，突然又可以了
 
 ```cpp
+conda install -c open3d-admin open3d
+```
+
+也不是很可以
+
+```cpp
+[Warning] Since Open3D 0.15, installing Open3D via conda is deprecated. Please re-install Open3D via: `pip install open3d -U`. 
+// ！！早说啊installing Open3D via conda is deprecated. installing Open3D via conda is deprecated…………
+conda remove -n myenv open3d=0.15.1
+```
+
+## 这下总可以了吧
+
+还是在myenv中，但是pip安装^^
+
+```cpp
+pip install --upgrade pip
+pip install open3d==0.18.0
+```
+
+验证Open3D是否安装在了正确的conda环境中：
+
+```cpp
+import open3d as o3d
+print(o3d.__version__)
+// 0.18.0
+```
+
+**It's over……^^**
+
+
+## threedmatch.py修改调用module版
+
+```python
 """Dataloader for 3DMatch dataset
 
 Modified from Predator source code by Shengyu Huang:
@@ -380,3 +424,5 @@ class ThreeDMatchDataset(Dataset):
         return pcd
 
 ```
+
+跳转正确的道路
