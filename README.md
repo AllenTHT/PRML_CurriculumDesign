@@ -62,7 +62,7 @@ conda install -c conda-forge tqdm~~
 conda install -c open3d-admin open3d
 ```
 
-也不是很可以
+也不是很可以，conda勉强给我下了个0.15的版本，不是0.18的
 
 ```cpp
 [Warning] Since Open3D 0.15, installing Open3D via conda is deprecated. Please re-install Open3D via: `pip install open3d -U`. 
