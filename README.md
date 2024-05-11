@@ -1,5 +1,9 @@
 # PRML_CurriculumDesign
 
+## RegTR网址
+
+https://github.com/yewzijian/RegTR
+
 ## RegTR/src/data_loaders/threedmatch.py的环境搭建过程
 
 创建激活环境
