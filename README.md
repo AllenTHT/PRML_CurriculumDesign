@@ -6,19 +6,20 @@ https://github.com/yewzijian/RegTR
 
 ## RegTR/src/data_loaders/threedmatch.py的环境搭建过程
 
-创建激活环境
-
-```cpp
-conda create -n py38env python=3.9 //py3.9无法下载open3d？是无法使用conda下载！所以中途还搞了个3.8版本的唉……
-// conda activate env_name
-conda activate myenv
-```
-
 退出环境
 
 ```cpp
 conda deactivate
 ```
+
+创建激活环境
+
+```cpp
+conda create -n myenv python=3.9 //py3.9无法下载open3d？是无法使用conda下载！所以中途还搞了个3.8版本的唉……
+// conda activate env_name
+conda activate myenv
+```
+
 
 在conda的env中安装CUDA （cudatoolkit）
 
